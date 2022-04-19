@@ -22,25 +22,18 @@ jobs:
       - uses: actions/checkout@v2
       - id: "check_array_make"
         run: cd lib/array_lib && make
-      - uses: actions/checkout@v2
       - id: "check_array_f_clean"
         run: cd lib/array_lib && make fclean
-      - uses: actions/checkout@v2
       - id: "check_convertor_make"
            run: cd lib/convertor && make
-      - uses: actions/checkout@v2
       - id: "check_convertor_f_clean"
           run: cd lib/convertor && make fclean
-      - uses: actions/checkout@v2
       - id: "check_print_make"
           run: cd lib/print_lib && make
-      - uses: actions/checkout@v2
       - id: "check_print_f_clean"
           run: cd lib/print_lib && make fclean
-      - uses: actions/checkout@v2
       - id: "check_str_make"
           run: cd lib/str_lib && make
-      - uses: actions/checkout@v2
       - id: "check_str_f_clean"
           run: cd lib/str_lib && make fclean
 
