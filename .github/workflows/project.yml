@@ -15,7 +15,7 @@ jobs:
           find . -name "*.gcno" -exec echo "::error file={},line=1,title=Unwanted file detected::{}" \;
           find . -name "*.gcda" -exec echo "::error file={},line=1,title=Unwanted file detected::{}" \;
           find . -name "*.gcov" -exec echo "::error file={},line=1,title=Unwanted file detected::{}" \;
-  check_compilation:
+  check_compilation_array:
     runs-on: "ubuntu-latest"
     container: epitechcontent/epitest-docker:latest
     steps:
@@ -24,16 +24,28 @@ jobs:
         run: cd lib/array_lib && make
       - id: "check_array_f_clean"
         run: cd lib/array_lib && make fclean
+  check_compilation_convertor:
+    runs-on: "ubuntu-latest"
+    container: epitechcontent/epitest-docker:latest
+    steps:
       - id: "check_convertor_make"
-           run: cd lib/convertor && make
-      - id: "check_convertor_f_clean"
-          run: cd lib/convertor && make fclean
+        run: cd lib/convertor && make
+      - id: check_convertor_f_clean
+        run: cd lib/convertor && make fclean
+  check_compilation_print:
+    runs-on: "ubuntu-latest"
+    container: epitechcontent/epitest-docker:latest
+    steps:
       - id: "check_print_make"
-          run: cd lib/print_lib && make
+        run: cd lib/print_lib && make
       - id: "check_print_f_clean"
-          run: cd lib/print_lib && make fclean
+        run: cd lib/print_lib && make fclean
+  check_compilation_string:
+    runs-on: "ubuntu-latest"
+    container: epitechcontent/epitest-docker:latest
+    steps:
       - id: "check_str_make"
-          run: cd lib/str_lib && make
+        run: cd lib/str_lib && make
       - id: "check_str_f_clean"
-          run: cd lib/str_lib && make fclean
+        run: cd lib/str_lib && make fclean
 
