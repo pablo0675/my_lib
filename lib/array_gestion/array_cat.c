@@ -38,3 +38,18 @@ void array_cat(char ***array, char **array_2)
     }
 }
 
+void remove_str_in_array(char ***array, char *str, int line)
+{
+    int len = my_array_len(*array);
+    char **tmp = malloc((len - 1) * sizeof(char *));
+
+    if (tmp == NULL)
+        return;
+    tmp[len - 1] = NULL;
+    for (int i = 0; i < line; i++)
+        tmp[i] = (*array)[i];
+    for (int i = line; i < len - 1; i++)
+        tmp[i] = (*array)[i + 1];
+    free(*array);
+    *array = tmp;
+}
